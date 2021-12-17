@@ -1,31 +1,30 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
-import Home from './components/Home';
+import Books from './components/Books';
 import Categories from './components/Categories';
+import user from './solid_user-circle.svg';
 
 function App() {
   return (
     <Router>
-      <nav id="navbar">
-        <h1 className="nav-title"> <Link to="/">Home</Link> </h1>
-        <ul className="navlist">
-          <li>
+      <nav id="navbar" className="bg-white text-slate-500 font-serif flex justify-between p-6 text-center">
+        <h1 className="text-blue-400 text-3xl font-bold"> Bookstore CMS </h1>
+        <ul className="flex justify-evenly gap-8">
+          <li className="hover:text-orange-300 uppercase tracking-wide">
+            <Link to="/">Books</Link>
+          </li>
+          <li className="hover:text-orange-300 uppercase tracking-wide ">
             <Link to="/categories">Categories</Link>
           </li>
         </ul>
+        <div className='bg-black'>
+          <img src={user} alt='user logo' />
+        </div>
       </nav>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Counter />
-        </header>
-      </div>
       <Routes>
         <Route path="/categories" element={<Categories />} />
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Books />} />
       </Routes>
     </Router>
   );
