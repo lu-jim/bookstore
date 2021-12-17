@@ -8,21 +8,15 @@ const Form = () => {
   focus:invalid:border-pink-500 focus:invalid:ring-pink-500`;
   return (
     <div className="flex flex-col container ">
-      <h2 className='text-md uppercase font-bold text-gray-500'> Add New Book</h2>
-      <div className='flex justify-between w-full'>
-        <input
-          type="text"
-          name="book"
-          placeholder="Book title"
-          className={inputButton}
-        />
-        <input type="dropdown"
-          name="category"
-          placeholder="Category"
-          className={inputButton} />
+      <h2 className="text-md uppercase font-bold text-gray-500"> Add New Book</h2>
+      <div className="flex justify-between w-full">
+        <input type="text" name="book" placeholder="Book title" className={inputButton} />
+        <input type="dropdown" name="category" placeholder="Category" className={inputButton} />
         <button
+          type="button"
           href="#"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-8">
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-8"
+        >
           Add Book
         </button>
       </div>

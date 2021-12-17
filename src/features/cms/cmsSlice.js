@@ -6,26 +6,28 @@ const uniqueId = () => {
   return dateString + randomness;
 };
 
-export const cmsSlice = createSlice({
+const cmsSlice = createSlice({
   name: 'cms',
   initialState: [],
   reducers: {
     create: (state, action) => {
-      const {payload} = action;
+      const { payload } = action;
 
       state.push({
         id: uniqueId(),
         description: payload,
         isComplete: false,
-      })
+      });
     },
     edit: (state, action) => {
-      const {id, description} = action.payload;
-      const bookToEdit = state.find(book=> book.id ===id)
+      const { id, description } = action.payload;
+      const bookToEdit = state.find((book) => book.id === id);
 
       if (bookToEdit) {
         bookToEdit.description = description;
       }
-    }
-  }
-})
+    },
+  },
+});
+
+export default cmsSlice;

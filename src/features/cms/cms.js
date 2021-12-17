@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
 
-const CMS = () => {
-  return (
-    <div> List here</div>
-  )
-}
+const CMS = () => (
+  <div> List here</div>
+);
 
 export default CMS;

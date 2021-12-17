@@ -1,5 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter as Router, Routes, Route, Link,
+} from 'react-router-dom';
 import './App.css';
 import Books from './components/Books';
 import Categories from './components/Categories';
@@ -18,8 +20,8 @@ function App() {
             <Link to="/categories">Categories</Link>
           </li>
         </ul>
-        <div className='bg-black'>
-          <img src={user} alt='user logo' />
+        <div className="bg-black">
+          <img src={user} alt="user logo" />
         </div>
       </nav>
       <Routes>
