@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import cmsReducer from '../features/cms/cmsSlice';
+import booksReducer from './books/books';
 
 const store = configureStore({
   reducer: {
-    cms: cmsReducer,
+    books: booksReducer,
   },
 });
 
