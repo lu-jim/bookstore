@@ -3,7 +3,7 @@ import {
   BrowserRouter as Router, Routes, Route, Link,
 } from 'react-router-dom';
 import './App.css';
-import Books from './components/Books';
+import Books from './components/Booklist';
 import Categories from './components/Categories';
 import user from './solid_user-circle.svg';
 

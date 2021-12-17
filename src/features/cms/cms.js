@@ -1,7 +1,5 @@
 import React from 'react';
 
-const CMS = () => (
-  <div> List here</div>
-);
+const CMS = () => <div> List here</div>;
 
 export default CMS;
