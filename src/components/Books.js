@@ -33,7 +33,7 @@ const Books = () => {
           <div className="card bg-white shadow-md rounded-md max-w-l -mr-1 h-70 tracking-tight w-full flex justify-between p-6 my-8">
             <div className="font-display">
               <h3 className="font-bold font-serif text-gray-400 text-sm">{dummyList[0].category}</h3>
-              <h2 className="text-xl font-bold">{dummyList[0].title}</h2>
+              <h2 className="text-xl font-bold w-80">{dummyList[0].title}</h2>
               <p className="text-gray-400 text-sm">
                 {' '}
                 {dummyList[0].author}
@@ -67,7 +67,7 @@ const Books = () => {
           <div className="card bg-white shadow-md rounded-md max-w-l -mr-1 h-70 tracking-tight w-full flex justify-between p-6 my-8">
             <div className="font-display">
               <h3 className="font-bold font-serif text-gray-400 text-sm">{dummyList[1].category}</h3>
-              <h2 className="text-xl font-bold">{dummyList[1].title}</h2>
+              <h2 className="text-xl font-bold w-80">{dummyList[1].title}</h2>
               <p className="text-gray-400 text-sm">
                 {' '}
                 {dummyList[1].author}
@@ -104,7 +104,7 @@ const Books = () => {
           <div className="card bg-white shadow-md rounded-md max-w-l -mr-1 h-70 tracking-tight w-full flex justify-between p-6 my-8">
             <div className="font-display">
               <h3 className="font-bold font-serif text-gray-400 text-sm">{dummyList[2].category}</h3>
-              <h2 className="text-xl font-bold">{dummyList[2].title}</h2>
+              <h2 className="text-xl font-bold w-80">{dummyList[2].title}</h2>
               <p className="text-gray-400 text-sm">
                 {' '}
                 {dummyList[2].author}
