@@ -1,36 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/books/books';
 
-const uniqueId = () => {
+const categories = ['Romance', 'Mystery', 'Fantasy', 'Non-Fiction', 'Technical'];
+
+export const uniqueId = () => {
   const dateString = Date.now().toString(36);
   const randomness = Math.random().toString(36).slice(2);
   return dateString + randomness;
 };
 
-const categories = ['Romance', 'Mystery', 'Fantasy', 'Non-Fiction', 'Technical'];
-
 const Form = () => {
   const dispatch = useDispatch();
-  const [state, setState] = React.useState({
-    title: '',
-    category: 'Romance',
-  });
-  const changeHandler = (e) => {
-    setState((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
+
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
+
+  const handleTitleChange = (e) => {
+    e.preventDefault();
+    setTitle(e.target.value);
   };
-  const submitBookToStore = () => {
-    const { title, category } = state;
-    const newId = uniqueId();
+
+  const handleAuthorChange = (e) => {
+    e.preventDefault();
+    setAuthor(e.target.value);
+  };
+
+  const handleCategoryChange = (e) => {
+    e.preventDefault();
+    setCategory(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const newBook = {
-      newId,
+      id: uniqueId(),
       title,
       category,
+      author: 'Anonymous',
+      currentChapter: '',
+      progress: 0,
     };
     dispatch(addBook(newBook));
+    setTitle('');
+    setAuthor('');
+    setCategory('Category');
   };
 
   const inputButton = `block px-3 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
@@ -42,15 +57,10 @@ const Form = () => {
     <div>
       <h2 className="text-md uppercase font-bold text-gray-500"> Add New Book</h2>
       <div className="flex justify-between w-full">
-        <form
-          className="flex container justify-between grow"
-          onSubmit={(e) => {
-            e.preventDefault();
-            submitBookToStore();
-          }}
-        >
-          <input type="text" name="title" placeholder="Book title" className={inputButton} value={state.title} onChange={changeHandler} required />
-          <select name="category" placeholder="Category" className={inputButton} onChange={changeHandler}>
+        <form className="flex container justify-between grow" onSubmit={handleSubmit}>
+          <input type="text" name="title" placeholder="Book title" className={inputButton} value={title} onChange={handleTitleChange} required />
+          <input type="text" name="author" placeholder="Author" className={inputButton} value={author} onChange={handleAuthorChange} required />
+          <select name="category" placeholder="Category" className={inputButton} onChange={handleCategoryChange} value={category}>
             {categories.map((category) => (
               <option key={uniqueId()} value={category}>
                 {category}
