@@ -39,3 +39,7 @@
     transform: translateY(0);
   }
 }
+
+.logo {
+  height: 2rem;
+}

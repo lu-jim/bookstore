@@ -40,18 +40,18 @@ const Form = () => {
     setCategory('');
   };
 
-  const inputButton = `block px-3 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
+  const inputButton = `flex px-3 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
   focus:outline-none focus:border-sky-500 focus:ring-1 focus:ring-sky-500
   disabled:bg-gray-50 disabled:text-gray-500 disabled:border-gray-200 disabled:shadow-none
   invalid:border-pink-500 invalid:text-pink-600
-  focus:invalid:border-pink-500 focus:invalid:ring-pink-500`;
+  focus:invalid:border-pink-500 focus:invalid:ring-pink-500mr-4 font-serif `;
   return (
     <div>
-      <h2 className="text-md uppercase font-bold text-gray-500"> Add New Book</h2>
+      <h2 className="text-xl uppercase font-bold text-gray-500 my-3"> Add New Book</h2>
       <div className="flex justify-between w-full">
         <form className="flex container justify-between grow" onSubmit={handleSubmit}>
-          <input type="text" name="title" placeholder="Book title" className={inputButton} value={title} onChange={handleTitleChange} required />
-          <select name="category" placeholder="Category" className={inputButton} onChange={handleCategoryChange} value={category}>
+          <input type="text" name="title" placeholder="Book title" className={`${inputButton} w-4/6`} value={title} onChange={handleTitleChange} required />
+          <select name="category" placeholder="Category" className={`${inputButton} w-1/6`} onChange={handleCategoryChange} value={category}>
             <option value="" disabled hidden>Category</option>
             {categories.map((category) => (
               <option key={uniqueId()} value={category}>
@@ -61,7 +61,7 @@ const Form = () => {
           </select>
           <button
             type="submit"
-            className="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-sm py-2 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 px-8"
+            className="text-white bg-blue-400 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 rounded-md text-sm py-3 px-14 text-center inline-flex items-center  dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 font-display uppercase font-bold"
           >
             Add Book
           </button>
