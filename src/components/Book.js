@@ -19,7 +19,7 @@ const Book = (props) => {
       <div className="font-display">
         <h3 className="font-bold font-serif text-gray-400 text-sm">{category}</h3>
         <h2 className="text-xl font-bold w-80">{title}</h2>
-        <p className="text-gray-400 text-sm">{author}</p>
+        <p className="text-gray-400 text-sm">{ }</p>
         <div className="text-gray-400 text-sm">
           {' '}
           Comments |
