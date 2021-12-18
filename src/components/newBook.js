@@ -14,17 +14,11 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
   const handleTitleChange = (e) => {
     e.preventDefault();
     setTitle(e.target.value);
-  };
-
-  const handleAuthorChange = (e) => {
-    e.preventDefault();
-    setAuthor(e.target.value);
   };
 
   const handleCategoryChange = (e) => {
@@ -38,14 +32,12 @@ const Form = () => {
       id: uniqueId(),
       title,
       category,
-      author: 'Anonymous',
-      currentChapter: '',
-      progress: 0,
+      currentChapter: 'Introduction',
+      progress: '0%',
     };
     dispatch(addBook(newBook));
     setTitle('');
-    setAuthor('');
-    setCategory('Category');
+    setCategory('');
   };
 
   const inputButton = `block px-3 border border-gray-300 rounded-md text-sm shadow-sm placeholder-gray-400
@@ -59,8 +51,8 @@ const Form = () => {
       <div className="flex justify-between w-full">
         <form className="flex container justify-between grow" onSubmit={handleSubmit}>
           <input type="text" name="title" placeholder="Book title" className={inputButton} value={title} onChange={handleTitleChange} required />
-          <input type="text" name="author" placeholder="Author" className={inputButton} value={author} onChange={handleAuthorChange} required />
           <select name="category" placeholder="Category" className={inputButton} onChange={handleCategoryChange} value={category}>
+            <option value="" disabled hidden>Category</option>
             {categories.map((category) => (
               <option key={uniqueId()} value={category}>
                 {category}
