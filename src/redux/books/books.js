@@ -58,7 +58,7 @@ const reducer = (state = initialState, {
   switch (type) {
     case ADD_BOOK: return [...state, book];
     case REMOVE_BOOK: return state.filter((book) => book.id !== id);
-    case GET_BOOKS: return [...state, bookPackage];
+    case GET_BOOKS: return [...state, ...bookPackage];
     default: return state;
   }
 };
