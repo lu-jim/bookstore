@@ -1,8 +1,14 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Book from './Book';
 import Form from './newBook';
+import { getBooks } from '../redux/books/books';
 
 const Booklist = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
   const booklist = useSelector((state) => state.bookReducer);
   const newList = booklist.map((book) => (
     <Book
