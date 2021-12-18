@@ -25,6 +25,10 @@ To get a local copy up and running follow these simple steps.
 - Type Enter to finish the installation process.
 - Run `npm i` and after all the dependencies are installed run `npm start`
 
+
+### Live Version:
+- [Netlify](https://affectionate-leavitt-595758.netlify.app/)
+
 ## Authors
 
 👤 **Luis Fernando Jimenez**
